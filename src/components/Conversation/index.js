@@ -28,7 +28,7 @@ export const Conversation = () => {
         setLoading(true);
         const answer = await getAnswer(text);
         setLoading(false);
-        console.log('answer:', answer);
+        // console.log('answer:', answer);
         setConversation(prev => ({
             ...prev,
             ...{ [`received${Object.keys(prev)?.length}`]: answer },
@@ -81,7 +81,8 @@ export const Conversation = () => {
             </ScrollView>
             <KeyboardAvoidingView
                 style={styles.container}
-                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                behavior={Platform.OS === 'ios' ? 'padding' : "height"}
+                keyboardVerticalOffset={Platform.select({ ios: 0, android: 500 })}>
                 <TextInput
                     blurOnSubmit
                     autoCapitalize="none"

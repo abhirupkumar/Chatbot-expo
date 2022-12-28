@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://chatbot-serverside.vercel.app/api/';
+const BASE_URL = 'https://nextjs-chatgpt-akb.vercel.app/api/';
 
 export const getAnswer = async (question) => {
     try {
